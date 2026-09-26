@@ -1,23 +1,64 @@
 aid: arbolmarkets
+
 name: Arbolmarkets
-description: 'Arbolmarkets is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Arbolmarkets is a financial technology company that provides a marketplace for secondary trading of private company equity. It enables
+  investors to buy and sell shares in private firms, offering liquidity solutions and a platform for price discovery. The service targets accredited
+  investors and companies seeking to manage their cap tables, facilitating secondary market transactions with compliance and reporting tools.
+  Arbolmarkets aims to democratize access to private market investments while ensuring regulatory adherence and transparent trade execution.
+
 url: https://raw.githubusercontent.com/api-evangelist/arbolmarkets/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Vendors
+  url: vendors/arbolmarkets-vendors.yml
+- type: Hosts
+  url: hosts/arbolmarkets-hosts.yml
 - type: Website
   url: https://equityzen.com/company/arbolmarkets
+- type: DomainSecurity
+  url: security/arbolmarkets-domain-security.yml
+
+apis:
+- name: Arbol API
+  description: Arbol provides parametric insurance and climate risk solutions via its API.
+  humanURL: https://www.arbol.io
+  baseURL: null
+  aid: arbolmarkets:arbol-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The Arbol website provides API information but no OpenAPI/GraphQL/AsyncAPI spec is publicly available.
+  evidence:
+  - url: https://www.arbol.io
+    status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
